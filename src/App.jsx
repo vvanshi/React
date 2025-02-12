@@ -29,17 +29,75 @@
 
 // export default App;
 
-import Footer from './components/Footer'
-import Header from './components/Navbar'
+// import Footer from './components/Footer'
+// import Header from './components/Navbar'
+// import React from 'react'
+
+// const App = () => {
+//   return (
+//    <>
+//    <Header />
+//    <Footer></Footer>
+//    </>
+//   )
+// }
+
+// export default App
+
+
 import React from 'react'
+import Card from './components/Card'
+
 
 const App = () => {
+const users= [
+  {
+    "name": "Vanshika Sharma",
+    "age": 20,
+    "city": "Pinjore",
+    "profession": "Project Manager",
+    "profile_photo": "https://example.com/photos/sanya.jpg"
+  },
+  {
+    "name": "Harsh Mehta",
+    "age": 21,
+    "city": "Chandigarh",
+    "profession": "Software Engineer",
+    "profile_photo": "https://example.com/photos/aarav.jpg"
+  },
+  {
+    "name": "Meera Kapoor",
+    "age": 25,
+    "city": "Delhi",
+    "profession": "Graphic Designer",
+    "profile_photo": "https://example.com/photos/meera.jpg"
+  },
+  {
+    "name": "Rohan Verma",
+    "age": 32,
+    "city": "Bangalore",
+    "profession": "Data Scientist",
+    "profile_photo": "https://example.com/photos/rohan.jpg"
+  },
+  {
+    "name": "Sanya Iyer",
+    "age": 27,
+    "city": "Pune",
+    "profession": "Marketing Manager",
+    "profile_photo": "https://example.com/photos/sanya.jpg"
+  }
+]
+
   return (
-   <>
-   <Header />
-   <Footer></Footer>
-   </>
+    <div>
+      <div className='p-10'>
+     {users.map(function(elem,idx){
+      return <Card key={idx} username={elem.name} age={elem.age} city={elem.city} profession={elem.profession} image={elem.profile_photo} />
+     })}
+     </div>
+    </div>
   )
 }
 
 export default App
+
