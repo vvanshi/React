@@ -152,26 +152,51 @@
 
 ///////-------------------------------ROUTER---------------------/////////////////////////
 
-import React from 'react'
-import {Route, Routes}  from 'react-router-dom'
-import About from './pages/About';
-import Product from './pages/Product';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Header from './components/Header';
+// import React from 'react'
+// import {Route, Routes}  from 'react-router-dom'
+// import About from './pages/About';
+// import Product from './pages/Product';
+// import Home from './pages/Home';
+// import Contact from './pages/Contact';
+// import Header from './components/Header';
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Header />
+//       <Routes>
+//         <Route  path='/about' element={<About />}/>
+//         <Route  path='/contact' element={<Contact />}/>
+//         <Route  path='/product' element={<Product />}/>
+//         <Route  path='/' element={<Home />}/>
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+//------------------------CONTEXT API-------------------------///////////////
+import React, { useContext } from 'react'
+import { dataContext } from './context/UserContext';
+import Header from './components/Header'
+import Section from './components/Section'
+import Footer from './components/Footer'
 
 const App = () => {
+
+  const  data=useContext(dataContext);
+  console.log(data);
+
   return (
     <div>
+      <h1>This is app.{data}</h1>
       <Header />
-      <Routes>
-        <Route  path='/about' element={<About />}/>
-        <Route  path='/contact' element={<Contact />}/>
-        <Route  path='/product' element={<Product />}/>
-        <Route  path='/' element={<Home />}/>
-      </Routes>
+      <Section />
+      <Footer />
     </div>
   )
 }
 
 export default App
+
